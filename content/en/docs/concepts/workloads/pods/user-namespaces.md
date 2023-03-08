@@ -9,6 +9,8 @@ min-kubernetes-server-version: v1.25
 <!-- overview -->
 {{< feature-state for_k8s_version="v1.25" state="alpha" >}}
 
+This is some placeholder text
+
 This page explains how user namespaces are used in Kubernetes pods. A user
 namespace allows to isolate the user running inside the container from the one
 in the host.
