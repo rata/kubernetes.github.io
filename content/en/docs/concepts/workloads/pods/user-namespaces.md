@@ -218,6 +218,12 @@ these entries for the `kubelet` user:
 kubelet:65536:7208960
 ```
 
+If you are changing this in a node that was running pods with user namespaces, you need to drain it
+before you apply the configuration and restart the kubelet.
+
+The reason is that the pods running can be using any range, potentially outside the range you
+configured, and the kubelet will fail to start if it can't honor the configuration.
+
 [CVE-2021-25741]: https://github.com/kubernetes/kubernetes/issues/104980
 [shadow-utils]: https://github.com/shadow-maint/shadow
 
